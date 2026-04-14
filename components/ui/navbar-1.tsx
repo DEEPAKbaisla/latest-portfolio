@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
+
 const Navbar1 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
@@ -54,12 +55,12 @@ const Navbar1 = () => {
         </nav>
 
         {/* Desktop CTA Button */}
-        <motion.div
+       <motion.div
           className="hidden md:block"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          // whileHover={{ scale: 1.05 }}
+          whileHover={{  }}
         >
           <a
             href="#"
@@ -67,6 +68,8 @@ const Navbar1 = () => {
             Contact
           </a>
         </motion.div>
+     
+     
 
         {/* Mobile Menu Button */}
         <motion.button
@@ -112,7 +115,7 @@ const Navbar1 = () => {
                 </motion.div>
               ))}
 
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -124,7 +127,39 @@ const Navbar1 = () => {
                   onClick={toggleMenu}>
                   Contact
                 </a>
-              </motion.div>
+              </motion.div> */}
+
+              <motion.button
+      initial="rest"
+      whileHover="hover"
+      whileTap="tap"
+      className="relative px-8 py-3 rounded-full border border-[#5e67e6] text-[#5e67e6] overflow-hidden font-medium"
+    >
+      {/* Text */}
+      <span className="relative z-10">Contact Me</span>
+
+      {/* Animated Background */}
+      <motion.span
+        variants={{
+          rest: { x: "-100%" },
+          hover: { x: "0%" },
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="absolute inset-0 bg-[#5e67e6]"
+      />
+
+      {/* Text color change on hover */}
+      <motion.span
+        variants={{
+          rest: { color: "#5e67e6" },
+          hover: { color: "#ffffff" },
+        }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        Contact Me
+      </motion.span>
+    </motion.button>
             </div>
           </motion.div>
         )}

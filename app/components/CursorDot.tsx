@@ -38,9 +38,7 @@ export default function CursorDot() {
   return (
     <div
     ref={dotRef}
-    // className="fixed top-0 left-0 w-4 h-4 bg-lime-400 rounded-full pointer-events-none z-50 "
-    
-      className="fixed top-0 left-0 w-4 h-4 bg-[#5e67e6] rounded-full pointer-events-none z-50 "
+      className="hidden md:flex fixed top-0 left-0 w-4 h-4 bg-[#5e67e6] rounded-full pointer-events-none z-50 "
     />
   );
 }

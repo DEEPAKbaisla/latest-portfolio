@@ -1,6 +1,4 @@
 "use client";
-
-import { i } from "framer-motion/client";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {

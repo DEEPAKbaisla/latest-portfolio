@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import TextStack from "@/app/components/Textstack"
 
 export default function Hero() {
   return (
@@ -41,7 +42,7 @@ export default function Hero() {
           {/* bg-[#d0ff71] */}
           {/* Floating badge */}
           <div className="absolute -bottom-10 -left-10 bg-[#5e67e6] text-white px-10 py-8 rounded-full text-[32px] font-san">
-            Hi
+           <TextStack />
           </div>
         </motion.div>
 
@@ -64,7 +65,7 @@ export default function Hero() {
 
           {/* Floating badge */}
           <div className="absolute bottom-5 left-2 bg-[#5e67e6] text-white px-7 py-6 rounded-full font-medium font-inter">
-            Hi
+             <TextStack />
           </div>
         </motion.div>
 

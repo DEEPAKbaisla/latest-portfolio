@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"), // 🔴 change this
+  metadataBase: new URL("https://deepakbaisla.vercel.app/"),
 
   title: {
     default: "Deepak | Web Developer",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Deepak | Web Developer",
     description:
       "Explore my portfolio, projects, and skills in modern web development.",
-    url: "https://yourdomain.com",
+    url: "https://deepakbaisla.vercel.app",
     siteName: "Deepak Baisla Portfolio",
     images: [
       {
@@ -61,11 +61,11 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "YOUR_GOOGLE_CODE_HERE", // 🔴 paste from Search Console
+    google: "V35Ba8ZEFWgAUMb1UG1krY8qwVo9VpJ1qmRiwRboKgs",
   },
 
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://deepakbaisla.vercel.app",
   },
 };
 

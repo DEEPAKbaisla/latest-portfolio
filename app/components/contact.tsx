@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/app/lib/animations";
+import TextStack from "./Textstack";
 
 export default function Contact() {
   return (
@@ -43,7 +44,7 @@ export default function Contact() {
           {/* bg-[#d0ff71] */}
                     {/* Floating badge */}
                     <div className="absolute -bottom-10 -left-10 bg-[#5e67e6] text-white px-10 py-8 rounded-full text-[32px] font-san">
-                      Hi
+                     <TextStack />
                     </div>
                   </motion.div>
 
@@ -67,7 +68,7 @@ export default function Contact() {
                   
                             {/* Floating badge */}
                             <div className="absolute bottom-5 right-53 bg-[#5e67e6] text-white px-7 py-6 rounded-full font-medium font-inter">
-                              Hi
+                              <TextStack />
                             </div>
                           </motion.div>
                   
