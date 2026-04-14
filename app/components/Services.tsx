@@ -27,7 +27,7 @@ export default function Services() {
           {/* ACCORDION */}
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-2xl hover:no-underline">
+              <AccordionTrigger className="text-2xl hover:no-underline ">
                 💻 Full-Stack Development
               </AccordionTrigger>
               <AccordionContent>

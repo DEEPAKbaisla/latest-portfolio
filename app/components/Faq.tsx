@@ -71,9 +71,9 @@ export default function FAQ() {
     <AccordionItem
       key={faq.id}
       value={`item-${faq.id}`}
-      className="border-b border-gray-700"
+      className=" border-gray-700 border-b data-[state=open]:border-[rgb(94,103,230)]"
     >
-      <AccordionTrigger className="text-left text-lg md:text-[26px] font-semibold hover:no-underline transition-colors data-[state=open]:text-[#5e67e6]">
+      <AccordionTrigger className="text-left text-lg md:text-[26px] font-semibold hover:no-underline transition-colors data-[state=open]:text-[#5e67e6] ">
         {faq.id}. {faq.question}
       </AccordionTrigger>
 

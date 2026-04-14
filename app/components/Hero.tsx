@@ -35,7 +35,7 @@ export default function Hero() {
               width={350}
               height={450}
               priority 
-              className="w-full h-auto object-cover"
+              className="w-[350px] h-[450px] object-cover"
             />
           </div>
           {/* bg-[#d0ff71] */}
