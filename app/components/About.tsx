@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 export default function About() {
   const ref = useRef(null);
-const isInView = useInView(ref, { amount: 0.5 })
+  const isInView = useInView(ref, { amount: 0.5 });
   return (
     <section id="about" className=" text-black py-20 px-6 md:px-18">
       <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -30,42 +30,39 @@ const isInView = useInView(ref, { amount: 0.5 })
 
           {/* STATS */}
           <motion.div
-  ref={ref}
-  className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10"
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-  transition={{ duration: 0.6 }}
->
-  {/* Projects */}
-  <div className="flex items-center gap-2 md:block">
-    <h3 className="text-5xl font-bold text-[#5e67e6]">
-      <Counter target={10} start={isInView} />+
-    </h3>
-    <p className="text-[#303030] text-xl font-bold">
-      Projects Built
-    </p>
-  </div>
+            ref={ref}
+            className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
+            transition={{ duration: 0.6 }}>
+            {/* Projects */}
+            <div className="flex items-center gap-2 md:block">
+              <h3 className="text-5xl font-bold text-[#5e67e6]">
+                <Counter target={10} start={isInView} />+
+              </h3>
+              <p className="text-[#303030] text-xl font-bold">Projects Built</p>
+            </div>
 
-  {/* Experience */}
-  <div className="flex items-center gap-2 md:block">
-    <h3 className="text-5xl font-bold text-[#5e67e6]">
-      <Counter target={1} start={isInView} />+
-    </h3>
-    <p className="text-[#303030] text-xl font-bold">
-      Year of Experience
-    </p>
-  </div>
+            {/* Experience */}
+            <div className="flex items-center gap-2 md:block">
+              <h3 className="text-5xl font-bold text-[#5e67e6]">
+                <Counter target={1} start={isInView} />+
+              </h3>
+              <p className="text-[#303030] text-xl font-bold">
+                Year of Experience
+              </p>
+            </div>
 
-  {/* Clients */}
-  <div className="flex items-center gap-2 md:block">
-    <h3 className="text-5xl font-bold text-[#5e67e6]">
-      <Counter target={5} start={isInView} />+
-    </h3>
-    <p className="text-[#303030] text-xl font-bold">
-      Clients Worldwide
-    </p>
-  </div>
-</motion.div>
+            {/* Clients */}
+            <div className="flex items-center gap-2 md:block">
+              <h3 className="text-5xl font-bold text-[#5e67e6]">
+                <Counter target={5} start={isInView} />+
+              </h3>
+              <p className="text-[#303030] text-xl font-bold">
+                Clients Worldwide
+              </p>
+            </div>
+          </motion.div>
 
           {/* CONTACT */}
           <div className="flex flex-col md:flex-row gap-8 mb-8 text-sm text-gray-400">
@@ -81,10 +78,6 @@ const isInView = useInView(ref, { amount: 0.5 })
           </div>
 
           {/* BUTTON */}
-          {/* <button className="border border-[#5e67e6] text-[#5e67e6] px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-antonio text-[26px] font-bold tracking-[0.2em]"> */}
-          {/* <AnimatedButton>MY STORY</AnimatedButton> */}
-          {/* </button> */}
-
           <AnimatedButton
             fillColor="#5e67e6"
             className="border border-[#5e67e6] text-[#5e67e6] px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-antonio text-[26px] font-bold tracking-[0.2em]">
@@ -94,13 +87,13 @@ const isInView = useInView(ref, { amount: 0.5 })
 
         {/* RIGHT SIDE IMAGE */}
         <div className="flex justify-center">
-          <div className="rounded-2xl overflow-hidden shadow-2xl rotate-[8deg]">
+          <div className="hidden md:block about-img-placeholder rounded-2xl overflow-hidden ">
             <Image
-              src="/images/hero.png" // replace with your image
+              src="/images/hero.png"
               alt="Deepak"
               width={400}
               height={500}
-              className="object-cover hidden md:block"
+              className="object-cover md:opacity-0"
             />
           </div>
         </div>

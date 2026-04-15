@@ -43,9 +43,6 @@ export default function Projects() {
 
       {/* PROJECT CARD */}
       <div className="space-y-12">
-        {/* {projects.map((project) => (
-    <ProjectCard key={project.id} {...project} />
-  ))} */}
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} index={index} />
         ))}

@@ -118,10 +118,11 @@ export default function Services() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   className="fixed z-[9999] pointer-events-none">
-                  <div className="hidden md:block w-[220px] h-[150px] rounded-xl overflow-hidden shadow-xl bg-black">
+                  <div className="hidden md:block w-[220px] h-[150px] rounded-xl overflow-hidden  bg-black">
                     <Image
                       src={hovered.image}
                       alt="preview"
+                      priority
                       width={220}
                       height={150}
                       className="object-cover w-full h-full"
@@ -140,14 +141,14 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="flex justify-center ">
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <div className=" hidden md:block services-img-placeholder rounded-2xl overflow-hidden ">
             <Image
               src="/images/work.jpg"
               alt="workspace"
               width={380}
               height={400}
               priority
-              className="object-cover w-full h-full  hidden md:block "
+              className="object-cover w-full h-full md:opacity-0 rotate-6"
             />
           </div>
         </motion.div>
