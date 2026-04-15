@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Antonio, Inter } from "next/font/google";
 import "./globals.css";
 import CursorDot from "./components/CursorDot";
+import { Toaster } from "react-hot-toast"
 
 const antonio = Antonio({
   subsets: ["latin"],
@@ -25,7 +26,11 @@ export const metadata: Metadata = {
 
   description:
     "Frontend Developer portfolio showcasing modern web applications built with React, Next.js, and Tailwind CSS.",
-
+  applicationName: "Deepak Baisla Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+  },
   keywords: [
     "Frontend Developer",
     "React Developer",
@@ -43,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Deepak Baisla Portfolio",
     images: [
       {
-        url: "/images/hero.png", // 🔴 add this image in public folder
+        url: "/images/hero.png",
         width: 1200,
         height: 630,
         alt: "Portfolio Preview",
@@ -51,6 +56,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  icons: {
+    icon: [
+      { url: "/images/nav.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/nav.png", sizes: "192x192", type: "image/png" },
+    ],
   },
 
   twitter: {
@@ -77,10 +88,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${antonio.variable} ${inter.variable} h-full antialiased`}
-    >
+      className={`${antonio.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <CursorDot />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Deepak Baisla",
+              url: "https://deepakbaisla.vercel.app",
+              jobTitle: "Web Developer",
+              image: "https://deepakbaisla.vercel.app/images/hero.png",
+              sameAs: [
+                "https://github.com/DEEPAKbaisla",
+                "https://www.linkedin.com/in/deepakbaisla7988/",
+              ],
+            }),
+          }}
+        />
+         <Toaster position="top-right" />
         {children}
       </body>
     </html>

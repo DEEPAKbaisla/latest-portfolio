@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-
+import AnimatedButton from "@/app/components/AnimatedButton";
 
 const Navbar1 = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +46,8 @@ const Navbar1 = () => {
               transition={{ duration: 0.3 }}
               whileHover={{ scale: 1.05 }}>
               <a
-                href="#"
-                className="text-[16px] text-gray-900 hover:text-gray-600 transition-colors font-medium font-inter">
+                href={`#${item.toLowerCase()}`}
+                className="text-[16px] text-gray-900 hover:text-[#5e67e6] transition-colors font-medium font-inter">
                 {item}
               </a>
             </motion.div>
@@ -55,21 +55,20 @@ const Navbar1 = () => {
         </nav>
 
         {/* Desktop CTA Button */}
-       <motion.div
+        <motion.div
           className="hidden md:block"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          whileHover={{  }}
-        >
-          <a
-            href="#"
-            className="inline-flex items-center justify-center px-7 py-4 text-sm text-white bg-black rounded-full hover:bg-gray-800 transition-colors font-inter">
-            Contact
+          whileHover={{}}>
+          <a href="#contact">
+            <AnimatedButton
+              fillColor="#5e67e6"
+              className="border text-white px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-inter text-[16px] font-medium bg-[#1a1a1a]">
+              Contact
+            </AnimatedButton>
           </a>
         </motion.div>
-     
-     
 
         {/* Mobile Menu Button */}
         <motion.button
@@ -130,36 +129,34 @@ const Navbar1 = () => {
               </motion.div> */}
 
               <motion.button
-      initial="rest"
-      whileHover="hover"
-      whileTap="tap"
-      className="relative px-8 py-3 rounded-full border border-[#5e67e6] text-[#5e67e6] overflow-hidden font-medium"
-    >
-      {/* Text */}
-      <span className="relative z-10">Contact Me</span>
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
+                className="relative px-8 py-3 rounded-full border border-[#5e67e6] text-[#5e67e6] overflow-hidden font-medium">
+                {/* Text */}
+                <span className="relative z-10">Contact Me</span>
 
-      {/* Animated Background */}
-      <motion.span
-        variants={{
-          rest: { x: "-100%" },
-          hover: { x: "0%" },
-        }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="absolute inset-0 bg-[#5e67e6]"
-      />
+                {/* Animated Background */}
+                <motion.span
+                  variants={{
+                    rest: { x: "-100%" },
+                    hover: { x: "0%" },
+                  }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-[#5e67e6]"
+                />
 
-      {/* Text color change on hover */}
-      <motion.span
-        variants={{
-          rest: { color: "#5e67e6" },
-          hover: { color: "#ffffff" },
-        }}
-        transition={{ duration: 0.3 }}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        Contact Me
-      </motion.span>
-    </motion.button>
+                {/* Text color change on hover */}
+                <motion.span
+                  variants={{
+                    rest: { color: "#5e67e6" },
+                    hover: { color: "#ffffff" },
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 flex items-center justify-center">
+                  Contact Me
+                </motion.span>
+              </motion.button>
             </div>
           </motion.div>
         )}

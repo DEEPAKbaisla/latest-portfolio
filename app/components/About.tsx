@@ -1,10 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+import AnimatedButton from "./AnimatedButton";
+import Counter from "./Count";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function About() {
+  const ref = useRef(null);
+const isInView = useInView(ref, { amount: 0.5 })
   return (
-    <section className=" text-black py-20 px-6 md:px-18">
+    <section id="about" className=" text-black py-20 px-6 md:px-18">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT SIDE */}
         <div className="md:ml-15">
@@ -15,53 +22,50 @@ export default function About() {
           {/* #5e67e6 light mode   */}
 
           <p className="text-[#303030] mb-8 max-w-lg leading-relaxed text-[18px]">
-            Hi, I'm{" "}
-            <span className="font-semibold">Deepak Baisla</span> — a
+            Hi, I'm <span className="font-semibold">Deepak Baisla</span> — a
             passionate Full Stack Developer I love building scalable web
             applications, crafting clean UI, and solving real-world problems
             through code.
           </p>
 
           {/* STATS */}
-          {/* <div className=" grid md:grid-cols-3 gap-8 mb-10">
-            <div>
-              <h3 className="text-4xl font-bold text-green-400">10+</h3>
-              <p className="text-gray-400 text-sm">Projects Built</p>
-            </div>
+          <motion.div
+  ref={ref}
+  className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
+  transition={{ duration: 0.6 }}
+>
+  {/* Projects */}
+  <div className="flex items-center gap-2 md:block">
+    <h3 className="text-5xl font-bold text-[#5e67e6]">
+      <Counter target={10} start={isInView} />+
+    </h3>
+    <p className="text-[#303030] text-xl font-bold">
+      Projects Built
+    </p>
+  </div>
 
-            <div>
-              <h3 className="text-4xl font-bold text-green-400">1+</h3>
-              <p className="text-gray-400 text-sm">Year of Experience</p>
-            </div>
+  {/* Experience */}
+  <div className="flex items-center gap-2 md:block">
+    <h3 className="text-5xl font-bold text-[#5e67e6]">
+      <Counter target={1} start={isInView} />+
+    </h3>
+    <p className="text-[#303030] text-xl font-bold">
+      Year of Experience
+    </p>
+  </div>
 
-            <div>
-              <h3 className="text-4xl font-bold text-green-400">5+</h3>
-              <p className="text-gray-400 text-sm">Clients on Worldwide</p>
-            </div>
-          </div> */}
-
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10 ">
-            <div className="flex items-center gap-2 md:block">
-              <h3 className="text-5xl font-bold text-[#5e67e6] ">
-                10+
-              </h3>
-              <p className="text-[#303030] text-xl font-bold">Projects Built</p>
-            </div>
-
-            <div className="flex items-center gap-2 md:block">
-              <h3 className="text-5xl font-bold text-[#5e67e6]">
-                1+
-              </h3>
-              <p className="text-[#303030] text-xl font-bold">Year of Experience</p>
-            </div>
-
-            <div className="flex items-center gap-2 md:block">
-              <h3 className="text-5xl font-bold text-[#5e67e6]">
-                5+
-              </h3>
-              <p className="text-[#303030] text-xl font-bold">Clients Worldwide</p>
-            </div>
-          </div>
+  {/* Clients */}
+  <div className="flex items-center gap-2 md:block">
+    <h3 className="text-5xl font-bold text-[#5e67e6]">
+      <Counter target={5} start={isInView} />+
+    </h3>
+    <p className="text-[#303030] text-xl font-bold">
+      Clients Worldwide
+    </p>
+  </div>
+</motion.div>
 
           {/* CONTACT */}
           <div className="flex flex-col md:flex-row gap-8 mb-8 text-sm text-gray-400">
@@ -77,9 +81,15 @@ export default function About() {
           </div>
 
           {/* BUTTON */}
-          <button className="border border-[#5e67e6] text-[#5e67e6] px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-antonio text-[26px] font-bold tracking-[0.2em]">
+          {/* <button className="border border-[#5e67e6] text-[#5e67e6] px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-antonio text-[26px] font-bold tracking-[0.2em]"> */}
+          {/* <AnimatedButton>MY STORY</AnimatedButton> */}
+          {/* </button> */}
+
+          <AnimatedButton
+            fillColor="#5e67e6"
+            className="border border-[#5e67e6] text-[#5e67e6] px-7 py-3 rounded-full hover:bg-[#5e67e6] hover:text-white transition font-antonio text-[26px] font-bold tracking-[0.2em]">
             MY STORY
-          </button>
+          </AnimatedButton>
         </div>
 
         {/* RIGHT SIDE IMAGE */}

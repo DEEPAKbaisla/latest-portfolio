@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import TextStack from "@/app/components/Textstack"
+import { motion,} from "framer-motion";
+
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-start pt-8 justify-center px-6 md:px-10 overflow-hidden ">
+    <section  id="home" className=" relative min-h-screen flex items-start pt-8 justify-center px-6 md:px-10 overflow-hidden ">
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-10 max-w-7xl w-full">
         {/* LEFT */}
@@ -39,12 +39,12 @@ export default function Hero() {
               className="w-[350px] h-[450px] object-cover"
             />
           </div>
-          {/* bg-[#d0ff71] */}
-          {/* Floating badge */}
           <div className="absolute -bottom-10 -left-10 bg-[#5e67e6] text-white px-10 py-8 rounded-full text-[32px] font-san">
            <TextStack />
           </div>
         </motion.div>
+
+      
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
