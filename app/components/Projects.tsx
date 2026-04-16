@@ -29,10 +29,10 @@ export default function Projects() {
     },
   ];
   return (
-    <section id="projects" className=" text-black py-20 px-6 md:px-36">
+    <section id="projects" className=" text-black py-20 px-6 sm:px-10 lg:px-20 xl:px-40">
       {/* HEADER */}
       <div className="mb-12 max-w-2xl">
-        <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
           FEATURED PROJECTS
         </h2>
         <p className="text-gray-400">

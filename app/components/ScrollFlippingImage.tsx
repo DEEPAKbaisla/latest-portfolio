@@ -144,7 +144,7 @@ export default function ScrollFlippingImage() {
           className="absolute inset-0"
           style={{ backfaceVisibility: "hidden" }}
          >
-           <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+           <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl ">
              <Image
                src="/images/hero.png"
                alt="Hero"
@@ -175,14 +175,14 @@ export default function ScrollFlippingImage() {
           className="absolute inset-0 rounded-2xl overflow-hidden "
           style={{ 
             backfaceVisibility: "hidden", 
-            transform: "rotateY(180deg)" 
+            transform: "rotateY(180deg) rotateZ(10deg)" 
           }}
          >
            <Image
              src="/images/work.jpg"
              alt="Services"
              fill
-             className="object-cover w-full h-full"
+             className="object-cover w-full h-full "
            />
          </div>
       </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
 import AnimatedButton from "@/app/components/AnimatedButton";
 
@@ -119,7 +119,10 @@ const Navbar1 = () => {
           className="md:hidden flex items-center"
           onClick={toggleMenu}
           whileTap={{ scale: 0.9 }}>
-          <Menu className="h-6 w-6 text-gray-900" />
+          <div className="h-8 w-8 bg-[#5e67e6] rounded-full flex flex-col justify-center items-center gap-1">
+            <span className="block w-3 h-[2px] bg-white"></span>
+            <span className="block w-3 h-[2px] bg-white"></span>
+          </div>
         </motion.button>
       </motion.div>
 
@@ -128,7 +131,7 @@ const Navbar1 = () => {
         {isOpen && (
           <motion.div
             style={{ pointerEvents: "auto" }}
-            className="fixed inset-0 bg-white z-50 pt-24 px-6 md:hidden"
+            className="fixed top-0 right-0 h-full w-[260px] bg-white z-50 pt-24 px-6 md:hidden"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -140,7 +143,7 @@ const Navbar1 = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}>
-              <X className="h-6 w-6 text-gray-900" />
+              <X className="h-8 w-8 p-1 bg-[#5e67e6] rounded-full text-white" />
             </motion.button>
             <div className="flex flex-col space-y-6">
               {["Home", "About", "Projects", "Blogs"].map((item, i) => (
@@ -159,36 +162,13 @@ const Navbar1 = () => {
                 </motion.div>
               ))}
 
-              <button 
+              <button
                 onClick={toggleMenu}
-                className="relative px-8 py-3 rounded-full border border-[#5e67e6] text-[#5e67e6] overflow-hidden font-medium"
-              >
+                className="relative px-8 py-3 rounded-full border border-[#5e67e6] text-[#5e67e6] overflow-hidden font-medium">
                 {/* Text */}
                 <a href="#contact">
                   <span className="relative z-10">Contact Me</span>
                 </a>
-                
-
-                {/* Animated Background */}
-                {/* <motion.span
-                    variants={{
-                      rest: { x: "-100%" },
-                      hover: { x: "0%" },
-                    }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-[#5e67e6]"
-                  /> */}
-
-                {/* Text color change on hover */}
-                {/* <motion.span
-                    variants={{
-                      rest: { color: "#5e67e6" },
-                      hover: { color: "#ffffff" },
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center">
-                    Contact Me
-                  </motion.span> */}
               </button>
             </div>
           </motion.div>

@@ -11,11 +11,11 @@ export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
   return (
-    <section id="about" className=" text-black py-20 px-6 md:px-18">
+    <section id="about" className=" text-black py-20 px-6 sm:px-10 lg:px-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT SIDE */}
-        <div className="md:ml-15">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight ">
+        <div className="lg:ml-15">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight ">
             ABOUT ME
           </h2>
           {/* text-[#5e67e6]  dark mode*/}
